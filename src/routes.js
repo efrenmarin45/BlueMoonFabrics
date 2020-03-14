@@ -1,8 +1,11 @@
 import Dashboard from "views/Dashboard.jsx";
 import UserProfile from "views/UserProfile.jsx";
 import TableList from "views/TableList.jsx";
+import Login from "views/Login.jsx";
+import Register from "views/Register.jsx";
 
 const dashboardRoutes = [
+  
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -24,6 +27,20 @@ const dashboardRoutes = [
     component: TableList,
     layout: "/admin"
   },
+  {
+    path: "/login",
+    name: "Login",
+    icon: "pe-7s-graph",
+    component: Login,
+    layout: "/admin"
+  },
+  {
+    path: "/register",
+    name: "Register",
+    icon: "pe-7s-graph",
+    component: Register,
+    layout: "/admin"
+  }
   
 ];
 
