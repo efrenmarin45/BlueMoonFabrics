@@ -31,12 +31,12 @@ render() {
 return (
       <div className="container">
         <div className="row">
-          <div className="col s8 offset-s2">
+          <div className="col-sm-12 col-xs-offset-3">
             <Link to="/admin/login" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
+              <i className="material-icons left"></i> Back to
               home
             </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Register</b> below
               </h4>
@@ -45,7 +45,7 @@ return (
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+              <div className="form-group col-sm-12">
                 <input
                   onChange={this.onChange}
                   value={this.state.name}
@@ -55,7 +55,7 @@ return (
                 />
                 <label htmlFor="name">Name</label>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group col-sm-12">
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -65,7 +65,7 @@ return (
                 />
                 <label htmlFor="email">Email</label>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group col-sm-12">
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -75,7 +75,7 @@ return (
                 />
                 <label htmlFor="password">Password</label>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group col-sm-12">
                 <input
                   onChange={this.onChange}
                   value={this.state.password2}
@@ -85,7 +85,7 @@ return (
                 />
                 <label htmlFor="password2">Confirm Password</label>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
                 <button
                   style={{
                     width: "150px",
