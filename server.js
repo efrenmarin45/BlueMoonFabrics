@@ -1,21 +1,40 @@
 const express = require("express");
+const app = express();
+const api = require("./api"); //references the routes folder
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const logger = require("morgan"); 
 
-const PORT = process.env.PORT || 8080;
-
+app.set('port', (process.env.PORT || 8080);
 const User = require("../models/userLogin");
-const app = express();
 
-app.use(logger("dev")); 
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bluemoonDB", { useNewUrlParser: true });
+app.use(cors());
 
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+
+app.use(logger("dev"));
+
+
+app.use("./api", api);
+app.use(express.static("static"));
+
+
+app.use(function (req, res){
+  const err = new Error("Not Found")
+  err.status = 404;
+  res.json(err)
+});
+
+
+mongoose.connect('mongodb+srv://efren45marin:Wander89%21@cluster0-3jmno.mongodb.net/test?retryWrites=true&w=majority');
+
+const db = mongoose.connection
+db.on("error", console.error.bind(console, "connection error:"))
+db.once("open", function (){
+  console.log("Connected to MongoDB!")
 });
