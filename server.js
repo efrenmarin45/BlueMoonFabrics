@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const logger = require("morgan"); 
 
-app.set('port', (process.env.PORT || 8080);
+app.set('port', (process.env.PORT || 8080));
 const User = require("../models/userLogin");
 
 
