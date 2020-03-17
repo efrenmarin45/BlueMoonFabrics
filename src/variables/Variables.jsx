@@ -245,8 +245,8 @@ var style = {
 // // // For tables
 // //
 //
-const thArray = ["ID", "Vendor", "Product Name", "Location", "Yards", "Cost", "SKU"];
-const tdArray = [
+const titleArray = ["ID", "Vendor", "Product Name", "Location", "Yards", "Cost", "SKU", "Vendor"];
+const msgArray= [
   ["1", "Dakota Rice", "$36,738", "Curaçao", "Oud-Turnhout", "10 YRD", "$200", "CSMC-0002"],
 
 ];
@@ -569,14 +569,14 @@ var responsiveBar = [
   ]
 ];
 var legendBar = {
-  names: ["Tesla Model S", "BMW 5 Series"],
+  names: ["Neon Fabric", "Blue Moon Fabric"],
   types: ["info", "danger"]
 };
 
 module.exports = {
   style, // For notifications (App container and Notifications view)
-  thArray,
-  tdArray, // For tables (TableList view)
+  titleArray,
+  msgArray, // For tables (TableList view)
   iconsArray, // For icons (Icons view)
   dataPie,
   legendPie,

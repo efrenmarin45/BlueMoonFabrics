@@ -12,7 +12,7 @@ class Footer extends Component {
                 <a href="#pablo">Home</a>
               </li>
               <li>
-                <a href="#pablo">Company</a>
+                <a href="https://www.bluemoonfabrics.com/">Company</a>
               </li>
             </ul>
           </nav>
