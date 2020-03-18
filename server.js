@@ -33,13 +33,15 @@ app.use(function (req, res){
 });
 
 
-mongoose.connect('mongodb+srv://efren45marin:Wander89%21@cluster0-3jmno.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://heftyhenry1:bluemoon1@cluster0-3jmno.mongodb.net/test?retryWrites=true&w=majority');
 
 const db = mongoose.connection
 db.on("error", console.error.bind(console, "connection error:"))
 db.once("open", function (){
   console.log("Connected to MongoDB!")
 });
+db.runCommand( { connectionStatus: 1, showPrivileges: true })
+connectionStatus.authInfo
 
 // Passport middleware
 app.use(passport.initialize());
