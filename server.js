@@ -5,6 +5,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const logger = require("morgan"); 
+const passport = require("passport");
+const users = require("./routes/api/users");
 
 app.set('port', (process.env.PORT || 8080));
 const User = require("../models/userLogin");
@@ -38,3 +40,10 @@ db.on("error", console.error.bind(console, "connection error:"))
 db.once("open", function (){
   console.log("Connected to MongoDB!")
 });
+
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./passport")(passport);
+// Routes
+app.use("/api/users", users);
