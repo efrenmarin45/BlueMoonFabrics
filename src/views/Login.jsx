@@ -27,61 +27,35 @@ console.log(userData);
   render() {
     const { errors } = this.state;
     return (
-    
-       <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col-sm-12 col-xs-offset-3">
-            <Link to="/admin/register" className="btn-flat waves-effect">
-              <i className="material-icons left"></i> Back to
-              home
-            </Link>
-            <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Login</b>
-              </h4>
-              {/* <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
-              </p> */}
-            </div>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="form-group col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                />
-                <label htmlFor="email">Email</label>
-              </div>
-              <div className="form-group col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                />
-                <label htmlFor="password">Password</label>
-              </div>
-              <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Login
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+      <div className="auth-wrapper">
+      <div className="auth-inner">
+      <form>
+      <h3>Sign In</h3>
+
+      <div className="form-group">
+          <label>Email address</label>
+          <input type="email" className="form-control" placeholder="Enter email" />
       </div>
+
+      <div className="form-group">
+          <label>Password</label>
+          <input type="password" className="form-control" placeholder="Enter password" />
+      </div>
+
+      <div className="form-group">
+          <div className="custom-control custom-checkbox">
+              <input type="checkbox" className="custom-control-input" id="customCheck1" />
+              <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+          </div>
+      </div>
+
+      <button type="submit" className="btn btn-primary btn-block">Submit</button>
+      <p className="forgot-password text-right">
+          Forgot <a href="#">password?</a>
+      </p>
+  </form>
+  </div> 
+  </div>
 
     );
   }

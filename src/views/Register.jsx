@@ -29,81 +29,39 @@ console.log(newUser);
 render() {
     const { errors } = this.state;
 return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12 col-xs-offset-3">
-            <Link to="/admin/login" className="btn-flat waves-effect">
-              <i className="material-icons left"></i> Back to
-              home
-            </Link>
-            <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/admin/login">Log in</Link>
-              </p>
-            </div>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="form-group col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
-                  type="text"
-                />
-                <label htmlFor="name">Name</label>
-              </div>
-              <div className="form-group col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                />
-                <label htmlFor="email">Email</label>
-              </div>
-              <div className="form-group col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                />
-                <label htmlFor="password">Password</label>
-              </div>
-              <div className="form-group col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password2}
-                  error={errors.password2}
-                  id="password2"
-                  type="password"
-                />
-                <label htmlFor="password2">Confirm Password</label>
-              </div>
-              <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Sign up
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    );
+  <div className="auth-wrapper">
+  <div className="auth-inner">
+  <form>
+  <h3>Sign Up</h3>
+
+  <div className="form-group">
+      <label>First name</label>
+      <input type="text" className="form-control" placeholder="First name" />
+  </div>
+
+  <div className="form-group">
+      <label>Last name</label>
+      <input type="text" className="form-control" placeholder="Last name" />
+  </div>
+
+  <div className="form-group">
+      <label>Email address</label>
+      <input type="email" className="form-control" placeholder="Enter email" />
+  </div>
+
+  <div className="form-group">
+      <label>Password</label>
+      <input type="password" className="form-control" placeholder="Enter password" />
+  </div>
+
+  <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+  <p className="forgot-password text-right">
+      Already registered <a href="#">sign in?</a>
+  </p>
+</form>
+</div>
+</div>
+  );
   }
 }
 export default Register;
