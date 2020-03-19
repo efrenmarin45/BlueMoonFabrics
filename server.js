@@ -6,9 +6,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const logger = require("morgan"); 
 const passport = require("passport");
+// import { mongoURI } from "./src/server/config/keys.js";
 
-const users = require("./src/server/routes/api/users");
-const User = require("../models/userLogin");
+// const users = require("./src/server/routes/api/users");
+const User = require("./src/server/models/userLogin");
 
 app.set('port', (process.env.PORT || 8080));
 
@@ -37,11 +38,11 @@ app.use(function (req, res){
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
-require("./passport")(passport);
+// require("./passport")(passport);
 // Routes
 app.use("/api/users", User);
 
-
+// mongoose.connect(mongoURI, { useNewUrlParser: true });
 mongoose.connect('mongodb+srv://efren45marin:Wander89%21@cluster0-3jmno.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
 
 const db = mongoose.connection
