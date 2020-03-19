@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { productSchema } from "/Users/tujun/Desktop/BlueMoonFabrics/src/server/models/products"
+import { productSchema } from "../../server/models/products"
 
 class Display extends Component {
   render() {
